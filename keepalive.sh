@@ -3,7 +3,7 @@
 export BASEDIR="$(dirname $0)"
 export COOKIE="$(cat "${BASEDIR}/cookie.txt")"
 
-curl 'https://mp.weixin.qq.com/mp/jsmonitor' \
+/usr/bin/curl 'https://mp.weixin.qq.com/mp/jsmonitor' \
   -H 'authority: mp.weixin.qq.com' \
   -H 'pragma: no-cache' \
   -H 'cache-control: no-cache' \

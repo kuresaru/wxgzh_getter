@@ -3,9 +3,9 @@
 export BASEDIR="$(dirname $0)"
 export COOKIE="$(cat "${BASEDIR}/cookie.txt")"
 export TOKEN="$(cat "${BASEDIR}/token.txt")"
-export FID="$(grep -Po "(?<=^${1},).*" "${BASEDIR}/idlist.txt")"
+export FID="$(grep -Po "(?<=^${1},)[^,]+" "${BASEDIR}/idlist.txt")"
 
-curl -s "https://mp.weixin.qq.com/cgi-bin/appmsg?action=list_ex&fakeid=${FID}&query=&begin=0&count=4&type=9&need_author_name=1&token=${TOKEN}&lang=zh_CN&f=json&ajax=1" \
+/usr/bin/curl -s "https://mp.weixin.qq.com/cgi-bin/appmsg?action=list_ex&fakeid=${FID}&query=&begin=0&count=4&type=9&need_author_name=1&token=${TOKEN}&lang=zh_CN&f=json&ajax=1" \
   -H 'authority: mp.weixin.qq.com' \
   -H 'pragma: no-cache' \
   -H 'cache-control: no-cache' \
